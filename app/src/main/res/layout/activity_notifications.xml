@@ -9,7 +9,7 @@
     tools:context=".ComplainListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/complainList"
+        android:id="@+id/NotiicationList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
@@ -17,7 +17,7 @@
         android:layout_marginTop="10dp" />
 
     <ProgressBar
-        android:id="@+id/complainsLoading"
+        android:id="@+id/NotificationLoading"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"

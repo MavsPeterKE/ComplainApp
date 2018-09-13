@@ -29,6 +29,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:textColor="@color/white"
             android:ems="10"
             android:inputType="textPersonName"
             android:textColorHint="@color/white"
@@ -39,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
+            android:textColor="@color/white"
             android:layout_marginRight="16dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -58,6 +60,7 @@
             android:ems="10"
             android:backgroundTint="@color/white"
             android:inputType="textPersonName"
+            android:textColor="@color/white"
             android:hint="Email" />
 
         <EditText
@@ -68,6 +71,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="10dp"
+            android:textColor="@color/white"
             android:backgroundTint="@color/white"
             android:textColorHint="@color/white"
             android:ems="10"
@@ -85,18 +89,20 @@
             android:ems="10"
             android:layout_marginTop="10dp"
             android:hint="Confirm Password"
+            android:textColor="@color/white"
             android:inputType="textPassword" />
+
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnregister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="31dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/gradient_background"
-            android:layout_marginBottom="31dp"
-            android:textColor="@color/white"
-            android:text="Register" />
+            android:text="Register"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </RelativeLayout>

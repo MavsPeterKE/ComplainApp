@@ -1,59 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
     tools:context=".PostComplainActivity">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Post Complain"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="401dp" />
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:weightSum="2"
+        android:background="@drawable/gradient_background"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/anonymous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Anonymous"
+            android:textColor="@color/white" />
+
+        <CheckBox
+            android:id="@+id/showidentity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_background"
+            android:text="Show Identity"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/edcomplainTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Complain Title"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="134dp" />
+        android:paddingLeft="20dp"
+        android:textColorHint="@color/white" />
 
     <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
+        android:id="@+id/edcomplainbody"
+        android:layout_width="match_parent"
         android:layout_height="180dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="16dp"
+        android:background="@drawable/border"
         android:ems="10"
         android:hint="Complain Description"
-        android:inputType="textMultiLine"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="211dp" />
+        android:inputType="textMultiLine" />
 
-    <RadioGroup
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/white"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/loadingProgress"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="64dp" />
+        android:indeterminateTint="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btpostcomplain"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Anonymous"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="64dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gradient_background"
+        android:text="Post Complain"
+        android:textColor="@color/white" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show Identity"
-        tools:layout_editor_absoluteX="232dp"
-        tools:layout_editor_absoluteY="64dp" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

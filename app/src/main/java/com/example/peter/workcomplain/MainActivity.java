@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import com.example.peter.workcomplain.Utils.ApiUtils;
 import com.example.peter.workcomplain.retrofit.ApiService;
+import com.example.peter.workcomplain.retrofit.model.LoginDataResponse;
 import com.example.peter.workcomplain.retrofit.model.LoginResponse;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.loginbt) void loginUser(){
         String user = edUsername.getText().toString().trim();
         String pass= edPassword.getText().toString().trim();
-
+        startLogin("","");
         if (!user.isEmpty() && !pass.isEmpty()){
             startLogin(user, pass);
         }else {
@@ -48,26 +50,31 @@ public class MainActivity extends AppCompatActivity {
     @OnClick({R.id.signup})void signUp(){
         startActivity(new Intent(MainActivity.this,RegisterActivity.class));
     }
-    private void startLogin(String user, String pass) {
+    private void startLogin(final String user, String pass) {
         mProgressBar.setVisibility(View.VISIBLE);
-        mApiService.getLoginResponse(user,pass).enqueue(new Callback<LoginResponse>() {
+        mApiService.getLoginResponse(user,pass).enqueue(new Callback<LoginDataResponse>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(Call<LoginDataResponse> call, Response<LoginDataResponse> response) {
                 if (response.isSuccessful()){
                     mProgressBar.setVisibility(View.GONE);
                     if (response.body().getResultMsg().equals("success")){
                         Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
+                        Prefs.putString("user",response.body().getName());
+                        Prefs.putString("department",response.body().getDepartment());
+                        Prefs.putString("email",response.body().getAuthorization());
                         startActivity(new Intent(MainActivity.this,DashboardActivity.class));
                     }else {
-                        Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                        mProgressBar.setVisibility(View.GONE);
+                        //Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
+            public void onFailure(Call<LoginDataResponse> call, Throwable t) {
                 Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+       //startActivity(new Intent(this,DashboardActivity.class));
     }
 }
