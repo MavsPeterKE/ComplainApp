@@ -1,14 +1,10 @@
 package com.example.peter.workcomplain;
 
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.example.peter.workcomplain.Utils.ApiUtils;
-import com.example.peter.workcomplain.retrofit.ApiService;
 import com.example.peter.workcomplain.retrofit.model.ComplainReportResponse;
 import com.pixplicity.easyprefs.library.Prefs;
 
@@ -32,7 +28,6 @@ public class RecordActivity extends AppCompatActivity {
     TextView tvClearedCount;
     @BindView(R.id.reportProgress)
     ProgressBar mProgressBar;
-    ApiService mApiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
