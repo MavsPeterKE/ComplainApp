@@ -3,5 +3,3 @@ Simple app that enables users to post complain or abuse at workplace and as well
 
 ![alt text](https://github.com/PeterOnyango/ComplainApp/blob/master/screenshots/loginscreen.png "Logo Title Text 1")
 ![alt text](https://github.com/PeterOnyango/ComplainApp/blob/master/screenshots/dashboardscreen.png "Logo Title Text 1")
-![alt text](https://github.com/PeterOnyango/ComplainApp/blob/master/screenshots/postscreen.png "Logo Title Text 1")
-![alt text](https://github.com/PeterOnyango/ComplainApp/blob/master/screenshots/complainsscreen.png "Logo Title Text 1")
