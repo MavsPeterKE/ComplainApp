@@ -29,7 +29,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText edpassword;
     @BindView(R.id.edconfirmpass)
     EditText edcpassword;
-    String name, email, password, department, cpass;
+    @BindView(R.id.edphone)
+    EditText edPhoneNumber;
+    String name, email, password, department, cpass,phoneNumber;
     ApiService mApiService;
 
 
@@ -49,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
             user.setPassword(password);
             user.setDepartment(department);
             user.setEmail(email);
+            user.setPhoneNumber(phoneNumber);
             mApiService.registerUser(user).enqueue(new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -82,10 +85,11 @@ public class RegisterActivity extends AppCompatActivity {
         department = eddepartment.getText().toString().trim();
         email = edemail.getText().toString().trim();
         password = edpassword.getText().toString().trim();
+        phoneNumber = edPhoneNumber.getText().toString().trim();
         cpass = edcpassword.getText().toString().trim();
 
         if (!name.isEmpty() && !department.isEmpty() && !email.isEmpty() && !password.isEmpty() &&
-                !cpass.isEmpty()) {
+                !cpass.isEmpty() && !phoneNumber.isEmpty()) {
             if (password.matches(cpass)) {
                 result = true;
             } else {

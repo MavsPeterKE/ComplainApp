@@ -13,7 +13,7 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/complain" />
 
     <LinearLayout
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:textColor="@color/white"
@@ -62,6 +62,19 @@
             android:inputType="textPersonName"
             android:textColor="@color/white"
             android:hint="Email" />
+        <EditText
+            android:id="@+id/edphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/white"
+            android:ems="10"
+            android:backgroundTint="@color/white"
+            android:inputType="phone"
+            android:textColor="@color/white"
+            android:hint="Phone Number" />
 
         <EditText
             android:id="@+id/edpass"

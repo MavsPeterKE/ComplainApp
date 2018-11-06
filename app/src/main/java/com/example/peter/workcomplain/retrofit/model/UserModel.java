@@ -5,6 +5,7 @@ public class UserModel {
     String password;
     String name;
     String department;
+    String phoneNumber;
 
     public String getEmail() {
         return email;
@@ -36,5 +37,13 @@ public class UserModel {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
